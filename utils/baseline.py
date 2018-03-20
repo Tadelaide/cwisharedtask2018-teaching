@@ -1,6 +1,5 @@
 from sklearn.linear_model import LogisticRegression
 
-#我今天要确认 github
 class Baseline(object):
 
     def __init__(self, language):

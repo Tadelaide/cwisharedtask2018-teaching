@@ -2,9 +2,6 @@ from utils.dataset import Dataset
 from utils.baseline import Baseline
 from utils.scorer import report_score
 
-#This is an example
-#aaaaaaa
-#123123123
 def execute_demo(language):
     data = Dataset(language)
 
@@ -18,7 +15,7 @@ def execute_demo(language):
     baseline.train(data.trainset)
 
     predictions = baseline.test(data.devset)
-
+    #gold_label is the binary result 
     gold_labels = [sent['gold_label'] for sent in data.devset]
 
     report_score(gold_labels, predictions)
