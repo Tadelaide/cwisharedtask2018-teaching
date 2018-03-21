@@ -1,6 +1,7 @@
 from utils.dataset import Dataset
 from utils.baseline import Baseline
 from utils.scorer import report_score
+import timeit
 
 def execute_demo(language):
     data = Dataset(language)
@@ -22,7 +23,13 @@ def execute_demo(language):
 
 
 if __name__ == '__main__':
+    start = timeit.default_timer()
     execute_demo('english')
+    englishTime = timeit.default_timer() - start
+    print('To complete English part, it take ',englishTime,' seconds')
+    start1 = timeit.default_timer()
     execute_demo('spanish')
+    spanishTime = timeit.default_timer() - start1
+    print('To complete English part, it take ',spanishTime,' seconds')
 
 
