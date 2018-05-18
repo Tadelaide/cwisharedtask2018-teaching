@@ -8,7 +8,8 @@ class Dataset(object):
         #用 format 形式编辑文本a = "".format()打开数据库，一个优秀的方法"{}".format()
         trainset_path = "datasets/{}/{}_Train.tsv".format(language, language.capitalize())
         devset_path = "datasets/{}/{}_Dev.tsv".format(language, language.capitalize())
-
+        test_path = "datasets/{}/{}_Test.tsv".format(language, language.capitalize())  
+        
         self.trainset = self.read_dataset(trainset_path)
         self.devset = self.read_dataset(devset_path)
 

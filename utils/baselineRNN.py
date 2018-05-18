@@ -78,7 +78,14 @@ class BaselineRNN(object):
             else :
                 predictions.append('0')
 
-        
+        Y = {}
+        cont = 0
+        for sent in testset:
+            if predictions[cont] == sent['gold_label']:
+                if not sent['target_word'] in sent.keys():
+                    Y[sent['target_word']] = 1
+            cont += 1
+        print(Y)
         # return self.model.predict(X)
         return predictions
 #调用
